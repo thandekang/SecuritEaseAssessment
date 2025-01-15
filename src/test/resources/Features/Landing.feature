@@ -5,3 +5,4 @@ Feature: Landing
             audience is informed about the key highlights of the race.
     Given I am on the Landing page
     And I click on Formula1
+    And I click on Results

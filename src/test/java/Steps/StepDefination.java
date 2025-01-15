@@ -16,8 +16,16 @@ public class StepDefination extends Base{
 
     }
     @And("I click on Formula1")
-    public void i_click_on_formula1() {
+    public void i_click_on_formula1()
+    {
+        landingPage.clickFormula1Link();
 
+    }
+
+    @Given("I click on Results")
+    public void i_click_on_results()
+    {
+        landingPage.clickResultsLink();
     }
 
     @AfterStep
