@@ -6,3 +6,6 @@ Feature: Landing
     Given I am on the Landing page
     And I click on Formula1
     And I click on Results
+    And I click 2023
+    When I click on LasVegas Grandprix results heading
+    Then the LasVegas Grandprix results page is displayed

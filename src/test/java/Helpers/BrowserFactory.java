@@ -15,7 +15,7 @@ public class BrowserFactory {
     public static WebDriver startBrowser(String browserChoice, String url) {
         if ("chrome".equalsIgnoreCase(browserChoice)) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
+            //options.addArguments("--headless");
             driver = new ChromeDriver(options);
         } else if ("firefox".equalsIgnoreCase(browserChoice)) {
             driver = new FirefoxDriver();
