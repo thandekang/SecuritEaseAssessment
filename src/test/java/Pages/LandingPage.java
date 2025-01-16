@@ -14,25 +14,34 @@ public class LandingPage {
     public WebDriver driver;
 
     @FindBy(xpath = "//span[@class='ssrcss-1u47p8g-LinkTextContainer eis6szr1'][normalize-space()='Formula 1']")
-    WebElement formula1_xpath;
+    WebElement Formula1_xpath;
 
     @FindBy(xpath = "//span[contains(.,'Results')]")
-    WebElement results_xpath;
+    WebElement Results_xpath;
 
     @FindBy(xpath = "//div[@data-content='2023']")
     WebElement Yr2023_xpath;
 
     @FindBy(xpath = "//span[@data-js-text='true'][contains(.,'Las Vegas Grand Prix, Las Vegas Street Circuit')]")
-    WebElement lasVegasResults_xpath;
+    WebElement LasVegasResults_xpath;
 
     @FindBy(xpath = "(//span[@class='signpost-link-text-wrapper'][contains(.,'Full race results')])[2]")
-    WebElement fullracelink_xpath;
+    WebElement FullRaceResultsLink_xpath;
+
+
+
 
     @FindBy(xpath = "//*[@id=\"main-heading\"]")
     WebElement LasVegasResultsPageHeading_xpath;
 
-    @FindBy(xpath = "(//span[@class='ssrcss-1hf3wfc-FullName e1dzfgvv0'][contains(.,'Max Verstappen')])[5]")
-    WebElement firstdriver_xpath;
+    @FindBy(xpath = "(//span[contains(.,'Max Verstappen')])[5]")
+    WebElement FirstFinisher_xpath;
+
+    @FindBy(xpath = "(//span[contains(.,'Charles Leclerc')])[5]")
+    WebElement SecondFinisher_xpath;
+
+    @FindBy(xpath = "(//span[contains(.,'Sergio Perez')])[1]")
+    WebElement ThirdFinisher_xpath;
 
 
     public LandingPage(WebDriver driver)
@@ -41,13 +50,13 @@ public class LandingPage {
     }
 
     public void clickFormula1Link() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(formula1_xpath));
-        formula1_xpath.click();
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(Formula1_xpath));
+        Formula1_xpath.click();
     }
 
     public void clickResultsLink()
     {
-        results_xpath.click();
+        Results_xpath.click();
     }
 
     public void clickYear2023Link()
@@ -57,16 +66,16 @@ public class LandingPage {
 
     public void clickLasVegasResultsHeading()
     {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(lasVegasResults_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(LasVegasResults_xpath));
 
-        lasVegasResults_xpath.click();
+        LasVegasResults_xpath.click();
 
     }
 
 
     public void viewFullRaceResults(){
 
-        fullracelink_xpath.click();
+        FullRaceResultsLink_xpath.click();
     }
 
     public void verifyLasVegasResultsPage()
@@ -76,6 +85,41 @@ public class LandingPage {
         String ResultsHeadingText = LasVegasResultsPageHeading_xpath.getText();
         Assert.assertEquals(ResultsHeadingText,"2023 Las Vegas Grand Prix");
     }
+
+
+    public void verifyMaxVerstappenFinishedFirst()
+    {
+        //new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(FirstFinisher_xpath));
+        FirstFinisher_xpath.isDisplayed();
+        String FirstFinisherText = FirstFinisher_xpath.getText();
+        Assert.assertEquals(FirstFinisherText,"Max Verstappen");
+    }
+
+
+    public void verifyGeorgeRussellFinishedSecond()
+    {
+
+        //new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(SecondFinisher_xpath));
+        SecondFinisher_xpath.isDisplayed();
+        String SecondFinisherText = SecondFinisher_xpath.getText();
+        Assert.assertEquals(SecondFinisherText,"George Russell");
+
+
+    }
+
+    public void verifySergioPerezFinishedThird()
+    {
+
+        //new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(ThirdFinisher_xpath));
+        ThirdFinisher_xpath.isDisplayed();
+        String ThirdFinisherText = ThirdFinisher_xpath.getText();
+        Assert.assertEquals(ThirdFinisherText,"Sergio Perez");
+
+
+    }
+
+
+
 
 
 

@@ -22,7 +22,7 @@ public class StepDefination extends Base{
     public void i_am_on_the_landing_page() {
 
     }
-    @And("I click on Formula1")
+    @When("I click on Formula1")
     public void i_click_on_formula1()
     {
         landingPage.clickFormula1Link();
@@ -43,11 +43,12 @@ public class StepDefination extends Base{
     }
 
 
-    @When("I click on LasVegas Grandprix results heading")
+    @And("I click on LasVegas Grandprix results heading")
     public void i_click_on_las_vegas_grandprix_results_heading()  {
 
         landingPage.clickLasVegasResultsHeading();
         landingPage.viewFullRaceResults();
+
     }
 
 
@@ -55,11 +56,13 @@ public class StepDefination extends Base{
     public void the_las_vegas_grandprix_results_page_is_displayed() {
 
        landingPage.verifyLasVegasResultsPage();
+       landingPage.verifyMaxVerstappenFinishedFirst();
+       landingPage.verifyGeorgeRussellFinishedSecond();
+       landingPage.verifySergioPerezFinishedThird();
+
 
 
     }
-
-
 
 
     @AfterStep
