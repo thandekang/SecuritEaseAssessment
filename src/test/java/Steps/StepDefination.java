@@ -22,7 +22,7 @@ public class StepDefination extends Base{
     public void i_am_on_landing_page() {
 
     }
-    @When("I click on Formula1")
+    @And("I click on Formula1")
     public void i_click_on_formula1()
     {
         landingPage.clickFormula1Link();
@@ -36,14 +36,15 @@ public class StepDefination extends Base{
         landingPage.clickResultsLink();
     }
 
-    @And("I click {int}")
-    public void i_click(Integer int1)
+    @And("I click on results year")
+    public void i_click_on_results_year()
+
     {
         landingPage.clickYear2023Link();
     }
 
 
-    @And("I click on LasVegas Grandprix results heading")
+    @When("I click on LasVegas Grandprix results heading")
     public void i_click_on_las_vegas_grandprix_results_heading()  {
 
         landingPage.clickLasVegasResultsHeading();
@@ -62,6 +63,29 @@ public class StepDefination extends Base{
        landingPage.verifySergioPerezFinishedThird();
 
 
+    }
+
+    @Given("I click on the Search link")
+    public void i_click_on_the_search_link()
+    {
+        sportPage.clickSearchLink();
+
+    }
+    @Given("enter the search input (.*)$")
+    public void enter_the_search_input_sport_in(String searchinput)
+
+    {
+        sportPage.enterSearchInput(searchinput);
+
+    }
+    @When("click Search button")
+    public void click_search_button() {
+
+        sportPage.clickSearchBtn();
+
+    }
+    @Then("search results are displayed")
+    public void search_results_are_displayed() {
 
     }
 
