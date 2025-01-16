@@ -4,9 +4,9 @@ Feature: Landing
             Verstappen took 1st place, George Russell finished 2nd, and Sergio Perez secured 3rd place, so that my
             audience is informed about the key highlights of the race.
 
-    Given   I am on the Landing page
+    Given   I am on Landing page
     When    I click on Formula1
     And     I click on Results
     And     I click 2023
     And     I click on LasVegas Grandprix results heading
-    Then    the LasVegas Grandprix results page is displayed
+    Then    LasVegas Grandprix results page is displayed

@@ -18,8 +18,8 @@ import java.time.Duration;
 
 public class StepDefination extends Base{
 
-    @Given("I am on the Landing page")
-    public void i_am_on_the_landing_page() {
+    @Given("I am on Landing page")
+    public void i_am_on_landing_page() {
 
     }
     @When("I click on Formula1")
@@ -52,8 +52,9 @@ public class StepDefination extends Base{
     }
 
 
-    @Then("the LasVegas Grandprix results page is displayed")
-    public void the_las_vegas_grandprix_results_page_is_displayed() {
+    @Then("LasVegas Grandprix results page is displayed")
+    public void las_vegas_grandprix_results_page_is_displayed()
+    {
 
        landingPage.verifyLasVegasResultsPage();
        landingPage.verifyMaxVerstappenFinishedFirst();
