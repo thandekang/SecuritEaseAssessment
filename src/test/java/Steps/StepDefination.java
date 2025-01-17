@@ -18,14 +18,16 @@ import java.time.Duration;
 
 public class StepDefination extends Base{
 
-    @Given("I am on Landing page")
-    public void i_am_on_landing_page() {
+    @Given("I am on BBC SPORT landing page")
+    public void i_am_on_bbc_sport_landing_page()
+    {
 
     }
     @And("I click on Formula1")
     public void i_click_on_formula1()
     {
         landingPage.clickFormula1Link();
+
 
     }
 
@@ -65,13 +67,13 @@ public class StepDefination extends Base{
 
     }
 
-    @Given("I click on the Search link")
+    @And("I click on the Search link")
     public void i_click_on_the_search_link()
     {
         sportPage.clickSearchLink();
 
     }
-    @Given("enter the search input (.*)$")
+    @And("enter the search input (.*)$")
     public void enter_the_search_input_sport_in(String searchinput)
 
     {
@@ -87,6 +89,16 @@ public class StepDefination extends Base{
     @Then("search results are displayed")
     public void search_results_are_displayed() {
 
+        sportPage.verifyResultsAreDisplayed();
+
+
+    }
+
+    @And("there must be at least four relevant results related to the search")
+    public void there_must_be_at_least_four_relevant_results_related_to_the_search()
+
+    {
+        sportPage.verifySportsIn2023AreDisplayed();
     }
 
 

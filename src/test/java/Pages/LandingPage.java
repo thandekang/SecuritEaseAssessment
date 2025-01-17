@@ -16,6 +16,7 @@ public class LandingPage {
     @FindBy(xpath = "//span[@class='ssrcss-1u47p8g-LinkTextContainer eis6szr1'][normalize-space()='Formula 1']")
     WebElement Formula1_xpath;
 
+
     @FindBy(xpath = "//span[contains(.,'Results')]")
     WebElement Results_xpath;
 
@@ -27,8 +28,6 @@ public class LandingPage {
 
     @FindBy(xpath = "(//span[@class='signpost-link-text-wrapper'][contains(.,'Full race results')])[2]")
     WebElement FullRaceResultsLink_xpath;
-
-
 
 
     @FindBy(xpath = "//*[@id=\"main-heading\"]")
@@ -53,6 +52,7 @@ public class LandingPage {
         new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(Formula1_xpath));
         Formula1_xpath.click();
     }
+
 
     public void clickResultsLink()
     {

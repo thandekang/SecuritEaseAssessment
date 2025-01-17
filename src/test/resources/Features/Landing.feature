@@ -6,7 +6,7 @@ Feature: Landing
             Verstappen took 1st place, George Russell finished 2nd, and Sergio Perez secured 3rd place, so that my
             audience is informed about the key highlights of the race.
 
-    Given   I am on Landing page
+    Given   I am on BBC SPORT landing page
     And     I click on Formula1
     And     I click on Results
     And     I click on results year
