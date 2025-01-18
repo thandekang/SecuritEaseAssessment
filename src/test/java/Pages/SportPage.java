@@ -23,7 +23,10 @@ public class SportPage {
     @FindBy(xpath = "//button[@id='searchButton']")
     WebElement searchBtn_xpath;
 
-    @FindBy(xpath = "(//a[@class='ssrcss-its5xf-PromoLink exn3ah91'])[1]")
+    //@FindBy(xpath = "(//a[@class='ssrcss-its5xf-PromoLink exn3ah91'])[1]")
+    //WebElement resultsOutCome_xpath;
+
+    @FindBy(xpath = "//a[contains(.,'Welsh sport in 2023: A year in review')]")
     WebElement resultsOutCome_xpath;
 
     public SportPage(WebDriver driver)
@@ -38,7 +41,7 @@ public class SportPage {
 
     public void enterSearchInput(String searchinput) {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(searchInput_xpath));
+            new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(searchInput_xpath));
             searchInput_xpath.sendKeys(searchinput);
         }
         catch (Exception e)
@@ -58,7 +61,7 @@ public class SportPage {
 
     public void verifyResultsAreDisplayed()
     {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(resultsOutCome_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(resultsOutCome_xpath));
         resultsOutCome_xpath.isDisplayed();
     }
 

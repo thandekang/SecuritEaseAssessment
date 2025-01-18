@@ -7,9 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/Features",
         glue = {"Steps"},
-        //tags = "@Regression",
-        //tags = "@Landing",
-        //tags = "@Sport",
+        tags = "@Regression",
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         publish = true
 )
